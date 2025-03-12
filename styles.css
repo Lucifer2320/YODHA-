@@ -192,6 +192,10 @@ position: relative;
     margin: 0 auto;
 }
 
+.contact input:first-of-type {
+    margin-top: 30px;
+}
+
 .contact input, .contact textarea {
     width: 90%;
     max-width: 400px;
