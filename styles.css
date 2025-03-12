@@ -98,6 +98,7 @@ position: relative;
   font-size: 1.2rem;
   border: 2px solid red; /* Ensures border remains when hovering */
   cursor: pointer;
+  text-decoration: none;
   transition: 
     transform 0.3s ease, 
     background-color 0.3s ease, 
@@ -106,7 +107,7 @@ position: relative;
 
 .cta-button:hover {
   background: transparent; /* Makes the background transparent */
-  color: red; /* Changes text color to red */
+  color: white; /* Changes text color to white */
   transform: translateY(-3px);
 }
 
