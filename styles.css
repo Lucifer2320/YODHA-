@@ -84,32 +84,30 @@ position: relative;
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 20px; /* Adds space from the text above */
 }
 
 .cta-button {
-  background: var(--primary-red);
-  color: var(--text-light);
+  background: red; /* Default red background */
+  color: white; /* White text */
   padding: 0.8rem 2rem;
   border-radius: 50px;
   font-weight: bold;
   min-width: 160px;
   text-align: center;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
-  border: none;
+  font-size: 1.2rem;
+  border: 2px solid red; /* Ensures border remains when hovering */
   cursor: pointer;
   transition: 
-    transform var(--transition-fast),
-    background-color 0.8s ease;
-}
-
-.cta-button.secondary {
-  background: transparent;
-  border: 2px solid var(--primary-red);
+    transform 0.3s ease, 
+    background-color 0.3s ease, 
+    color 0.3s ease;
 }
 
 .cta-button:hover {
+  background: transparent; /* Makes the background transparent */
+  color: red; /* Changes text color to red */
   transform: translateY(-3px);
-  background-color: #cc0000;
 }
 
 /* Programs Section */
