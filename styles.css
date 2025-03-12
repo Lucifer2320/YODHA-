@@ -186,29 +186,30 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .contact input, .contact textarea {
     width: 80%;
     max-width: 400px;
-    padding: 10px;
+    padding: 15px;
     border: none;
     border-radius: 5px;
+    font-size: 18px;
 }
 
 .contact textarea {
-    height: 100px;
+    height: 120px;
 }
 
 .contact button {
     background: red;
-    padding: 10px 20px;
+    padding: 12px 25px;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 20px;
     transition: 0.3s;
 }
 
