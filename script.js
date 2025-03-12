@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Option 1: Send Data to Google Sheets (No Backend Needed)
-        const sheetURL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+        const sheetURL = "https://script.google.com/macros/s/AKfycbyekakSJ3fiX1AQ4_mFUUe5mxm2KGYAanWacdwmy_1YawxRsM3Y_bR9Yl8iLKszsawQtg/exec";
         const formData = new FormData();
         formData.append("name", name);
         formData.append("phone", phone);
