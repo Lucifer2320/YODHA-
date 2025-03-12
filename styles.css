@@ -62,10 +62,19 @@ section {
   margin-top: var(--header-height);
   background: 
     linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url('./mma-bg.jpg') center/cover fixed;
-  position: relative;
+    url('./mma-bg.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
+@media (max-width: 768px) {
+    .hero {
+        background-size: cover;
+        background-attachment: scroll;
+    }
+    
 .hero h2 {
   font-size: clamp(1.8rem, 5vw, 3.5rem);
   margin-bottom: 1.5rem;
