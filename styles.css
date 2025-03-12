@@ -18,7 +18,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.85);
     position: fixed;
     width: 100%;
     top: 0;
@@ -26,7 +26,7 @@ header {
 }
 
 .logo {
-    width: 130px;
+    width: 100px;
 }
 
 nav ul {
@@ -47,7 +47,7 @@ nav ul li a:hover {
 
 /* Section Padding */
 section {
-    padding: 100px 20px;
+    padding: 100px 15px;
 }
 
 /* ===== Hero Section ===== */
@@ -62,7 +62,7 @@ section {
   margin-top: var(--header-height);
   background: 
     linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-    url('./logo.jpg') center/cover fixed;
+    url('./mma-bg.jpg') center/cover fixed;
   position: relative;
 }
 
