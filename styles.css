@@ -187,19 +187,32 @@ position: relative;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .contact input, .contact textarea {
-    width: 80%;
+    width: 90%;
     max-width: 400px;
     padding: 15px;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 18px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact input: focus,.contact textarea:focus
+{ border-color: red;
+ background: rgba(255, 255, 255, 0.2);
 }
 
 .contact textarea {
     height: 120px;
+    resize: none;
 }
 
 .contact button {
@@ -215,6 +228,12 @@ position: relative;
 
 .contact button:hover {
     background: darkred;
+    transform: scale(1.05s);
+}
+
+@media (max-width: 600px) {
+    .contact input, .contact textarea
+    { width: 100%; }
 }
 
 /* Footer */
