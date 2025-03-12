@@ -50,27 +50,32 @@ section {
     padding: 100px 20px;
 }
 
-/* Hero Section */
+/* ===== Hero Section ===== */
 .hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: url('mma-bg.jpg') no-repeat center center/cover;
-    text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  margin-top: var(--header-height);
+  background: 
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('./logo.jpg') center/cover fixed;
+  position: relative;
 }
 
 .hero h2 {
-    font-size: 3rem;
-    animation: slide-in 1s ease-in-out;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin-top: 10px;
-    opacity: 0;
-    animation: fade-in 2s ease-in-out forwards;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  max-width: 800px;
+  margin: 0 auto 2rem;
 }
 
 /* CTA Buttons */
