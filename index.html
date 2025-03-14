@@ -85,5 +85,29 @@
     <footer>
         <p>© 2025 Yodha Martial Arts Academy. All Rights Reserved.</p>
     </footer>
+
+    <!-- JavaScript to Send Form Data to Google Sheets -->
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Stop the page from refreshing
+
+        var formData = new FormData(this);
+
+        fetch("YOUR_GOOGLE_SCRIPT_URL", { // Replace with your actual Web App URL
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("Message Sent Successfully!");
+            document.getElementById("contactForm").reset(); // Clear the form
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("Something went wrong. Try again!");
+        });
+    });
+    </script>
+
 </body>
 </html>
