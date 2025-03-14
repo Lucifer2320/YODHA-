@@ -2,7 +2,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     event.preventDefault();
 
     var formData = new FormData(this);
-    var url = "https://script.google.com/macros/s/AKfycbyiCTV7QgjD2m2s7BT_HOyUQDmWzEj8W_IiLZehaLMTRZKCeWclF5GJeBrLOHtDxC0Z/exec"; // Replace this with your Web App URL
+    var url = "https://script.google.com/macros/s/AKfycbzUXb_f7_VzcmDjEWo_1AOCfrOAB45JRW_CAQgWu0OBbPzfWt7Zw1v9GdCwRe6yu87y/exec"; // Replace this with your Web App URL
 
     fetch(url, {
         method: "POST",
