@@ -1,14 +1,26 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbymbQIFNgv4tolkkMF7CTfVQiYPgaYHYnEaDaQUwHTWtGwiWr8-p1_mrcF5XKxMvEFw0w/exec"; // Replace this
-const form = document.querySelector("form");
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    var formData = new FormData(this);
+    var url = "https://script.google.com/macros/s/AKfycbyiCTV7QgjD2m2s7BT_HOyUQDmWzEj8W_IiLZehaLMTRZKCeWclF5GJeBrLOHtDxC0Z/exec"; // Replace this with your Web App URL
 
-    fetch(scriptURL, { method: "POST", body: new FormData(form) })
-        .then(response => alert("Message sent successfully!"))
-        .catch(error => alert("Error sending message! Try again."));
-    
-    form.reset(); // Clears form after submission
+    fetch(url, {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        if (data === "Success") {
+            alert("Sent successfully!");
+            document.getElementById("contactForm").reset();
+        } else {
+            alert("Error: " + data);
+        }
+    })
+    .catch(error => {
+        alert("Failed to send. Check console for details.");
+        console.error(error);
+    });
 });
 
 
