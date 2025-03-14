@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
-    
+
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
@@ -8,34 +8,21 @@ document.addEventListener("DOMContentLoaded", function () {
         const phone = document.getElementById("phone").value;
         const comments = document.getElementById("comments").value;
 
-        if (!name || !phone) {
-            alert("Please fill in all required fields.");
-            return;
-        }
-
-        const sheetURL = "https://script.google.com/macros/s/AKfycbyekakSJ3fiX1AQ4_mFUUe5mxm2KGYAanWacdwmy_1YawxRsM3Y_bR9Yl8iLKszsawQtg/exec"; // Replace with your script URL 
-
-        const formData = new FormData();
-        formData.append("name", name);
-        formData.append("phone", phone);
-        formData.append("comments", comments);
-
-        try {
-            let response = await fetch(sheetURL, {
+        if (name && phone) {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbymbQIFNgv4tolkkMF7CTfVQiYPgaYHYnEaDaQUwHTWtGwiWr8-p1_mrcF5XKxMvEFw0w/exec", {
                 method: "POST",
-                body: formData,
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, phone, comments })
             });
 
-            let result = await response.text();
-            if (result.includes("Success")) {
+            if (response.ok) {
                 alert(`Thank you, ${name}! We will contact you soon.`);
                 form.reset();
             } else {
-                alert("Something went wrong. Try again.");
+                alert("Error submitting form. Please try again.");
             }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("There was a problem submitting the form.");
+        } else {
+            alert("Please fill in all required fields.");
         }
     });
 });
